@@ -40,10 +40,7 @@ SECTOR_NAMES = {
 DATA_PATH = Path(__file__).parent.parent / "data" / "master_data.parquet"
 OUTPUT_DIR = Path(__file__).parent.parent / "pdf"
 
-
-# ---------------------------------------------------------------------------
 # Cycle classification
-# ---------------------------------------------------------------------------
 
 def classify_phases(df: pd.DataFrame, pmi_col: str = "PMI", span: int = 3) -> pd.DataFrame:
     """
@@ -69,10 +66,7 @@ def classify_phases(df: pd.DataFrame, pmi_col: str = "PMI", span: int = 3) -> pd
     df["Cycle_Phase"] = np.select(conditions, phases, default="Unknown")
     return df
 
-
-# ---------------------------------------------------------------------------
 # Forward returns
-# ---------------------------------------------------------------------------
 
 def add_forward_returns(
     df: pd.DataFrame, excess_cols: list[str], horizon: int = 3,
@@ -93,10 +87,7 @@ def add_forward_returns(
         fwd_cols.append(fwd_name)
     return df, fwd_cols
 
-
-# ---------------------------------------------------------------------------
 # Scoring
-# ---------------------------------------------------------------------------
 
 def compute_scores(df: pd.DataFrame, fwd_cols: list[str]) -> pd.DataFrame:
     """
@@ -110,10 +101,7 @@ def compute_scores(df: pd.DataFrame, fwd_cols: list[str]) -> pd.DataFrame:
     win_rate = grouped.apply(lambda x: (x > 0).mean()) * 100
     return avg_ret * win_rate
 
-
-# ---------------------------------------------------------------------------
 # Plots
-# ---------------------------------------------------------------------------
 
 def plot_phase_diagram(df: pd.DataFrame, span: int = 3, save_path: Path | None = None):
     """PMI phase trajectory scatter plot."""
@@ -193,10 +181,7 @@ def plot_scored_heatmap(
 
     plt.show()
 
-
-# ---------------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------------
 
 def main():
     HORIZON = 3  # months forward
