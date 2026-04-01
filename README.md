@@ -4,7 +4,7 @@
 
 Ce rapport présente une **stratégie quantitative de rotation sectorielle** pour l'indice STOXX 600 européen, utilisant les cycles économiques mesurés par l'Indice des Directeurs d'Achat (PMI) pour optimiser les allocations sectorielles. La stratégie vise à générer de l'alpha en anticipant les phases économiques et en surpondérant les secteurs favoris de chaque phase.
 
-**Objectif d'Investissement :** Surperformer l'indice STOXX 600 de 1.5-2.5% annualisé avec un ratio Sharpe amélioré.
+**Objectif d'Investissement :** Surperformer l'indice STOXX 600.
 
 **Horizon :** Moyen terme (3 mois de rééquilibrage) avec allocation stratégique de long terme.
 
